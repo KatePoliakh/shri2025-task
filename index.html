@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Яндекс.Дом</title>
+    <link rel="preload" as="style" href="styles.css">
     <link rel="preload" as="font" href="assets/lato.woff2" type="font/woff2" crossorigin="anonymous">
     
     <link rel="stylesheet" type="text/css" href="reset.css">
@@ -84,7 +85,7 @@
 
         return <li ref={ref} className={'event' + (props.slim ? ' event_slim' : '')}>
             <button className="event__button">
-                <span className={`event__icon event__icon_${props.icon}`} role="img" aria-label={props.iconLabel}></span>
+                <span className={`event__icon event__icon_${props.icon}`} role="img" aria-label={props.iconLabel} loading="lazy"></span>
                 <h4 className="event__title">{props.title}</h4>
                 {props.subtitle &&
                     <span className="event__subtitle">{props.subtitle}</span>
@@ -272,6 +273,7 @@
                                         className="hero-dashboard__icon hero-dashboard__icon_rain"
                                         role="img"
                                         aria-label="Дождь"
+                                        loading="lazy"
                                     ></div>
                                 </div>
                             </li>
